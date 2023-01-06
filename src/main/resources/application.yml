@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9093
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      topic: config
+    consumer:
+      bootstrap-servers: localhost:9093
+      group-id: config
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      topic: config
+    template:
+      default-topic: config
+
+logging:
+  level:
+    root: info
